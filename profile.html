@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light border-bottom">
+    <div class="container">
+        <span class="navbar-brand">ИТ-Проф</span>
+        <div>
+            <label id="user_name"></label>
+            <a href="edit-profile.html" class="btn btn-sm btn-outline-primary ms-2">Редактировать</a>
+            <button class="btn btn-sm btn-outline-danger" onclick="logout()">Выход</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-4">
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5>📊 Рейтинг надёжности</h5>
+
+            <p class="mb-1">Индекс компетенций: <b id="competenceText">0%</b></p>
+            <div class="progress mb-3">
+                <div id="competenceBar" class="progress-bar" style="width:0%"></div>
+            </div>
+
+            <p class="mb-1">Доверие сообщества: <b id="trustText">0%</b></p>
+            <div class="progress">
+                <div id="trustBar" class="progress-bar bg-success" style="width:0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center mb-4">
+        <div class="col-md-4 mb-2">
+            <div class="card"><div class="card-body">Подтверждений: <b id="confCount">0</b></div></div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <div class="card"><div class="card-body">Навыков: <b id="skillsCount">0</b></div></div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <div class="card"><div class="card-body">Рекомендаций: <b id="recomendationsCount">0</b></div></div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex">
+        <a href="edit-profile.html" class="btn btn-primary">✏️ Редактировать профиль</a>
+        <a href="#" class="btn btn-outline-success">✅ Подтверждения</a>
+        <a href="#" class="btn btn-outline-secondary">📄 Экспорт PDF</a>
+    </div>
+
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

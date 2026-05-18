@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Редактирование профиля</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light border-bottom">
+    <div class="container">
+        <span class="navbar-brand">ИТ-Проф</span>
+        <div>
+            <a href="profile.html" class="btn btn-sm btn-outline-secondary">Назад</a>
+            <button class="btn btn-sm btn-outline-danger" onclick="logout()">Выход</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-4">
+
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item"><button class="nav-link active" onclick="showTab('main')">Общие</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="showTab('edu')">Образование</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="showTab('exp')">Опыт</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="showTab('skills')">Навыки</button></li>
+    </ul>
+
+    <div id="main" class="tab">
+        <input id="fullName" class="form-control mb-2" placeholder="ФИО">
+        <input id="email" class="form-control mb-2" placeholder="Email">
+        <input id="phone" class="form-control mb-2" placeholder="Телефон">
+        <button class="btn btn-primary" onclick="saveMain()">Сохранить</button>
+    </div>
+
+    <div id="edu" class="tab" style="display:none">
+        <h5>Образование</h5>
+        <input id="eduType" class="form-control mb-2" placeholder="Тип: ВУЗ / Курсы">
+        <input id="eduName" class="form-control mb-2" placeholder="Название">
+        <input id="eduPeriod" class="form-control mb-2" placeholder="Период: 2018-2023">
+        <input id="eduDoc" class="form-control mb-2" placeholder="Документ">
+        <button class="btn btn-success mb-3" onclick="addEducation()">Добавить</button>
+        <div id="eduList"></div>
+    </div>
+
+    <div id="exp" class="tab" style="display:none">
+        <h5>Опыт работы</h5>
+        <input id="expType" class="form-control mb-2" placeholder="Тип: ТК РФ / фриланс / ИП">
+        <input id="company" class="form-control mb-2" placeholder="Компания">
+        <input id="position" class="form-control mb-2" placeholder="Должность">
+        <input id="expPeriod" class="form-control mb-2" placeholder="Период">
+        <button class="btn btn-success mb-3" onclick="addExperience()">Добавить</button>
+        <div id="expList"></div>
+    </div>
+
+    <div id="skills" class="tab" style="display:none">
+        <h5>Навыки</h5>
+        <input id="skillName" class="form-control mb-2" placeholder="Навык: C#, React, Docker">
+        <label>Уровень: <span id="levelText">5</span></label>
+        <input id="skillLevel" type="range" min="0" max="10" value="5" class="form-range" oninput="levelText.textContent=this.value">
+        <button class="btn btn-success mb-3" onclick="addSkill()">Добавить</button>
+        <div id="skillList"></div>
+    </div>
+
+    <div id="msg" class="mt-3 text-success"></div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/edit-profile.js"></script>
+</body>
+</html>

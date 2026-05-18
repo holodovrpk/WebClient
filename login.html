@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="card mx-auto shadow-sm" style="max-width:430px">
+        <div class="card-body">
+            <h4 class="text-center">ИТ-Проф</h4>
+            <p class="text-center text-muted">Личный кабинет</p>
+
+            <div class="mb-3 text-center">
+                <button class="btn btn-sm btn-primary" onclick="showLogin()">Войти</button>
+                <button class="btn btn-sm btn-outline-primary" onclick="showRegister()">Регистрация</button>
+            </div>
+
+            <div id="loginBlock">
+                <input id="loginEmail" class="form-control mb-2" placeholder="Email">
+                <input id="loginPassword" type="password" class="form-control mb-2" placeholder="Пароль">
+                <input id="code2fa" class="form-control mb-2" placeholder="Код 2FA, если есть">
+
+                <button class="btn btn-primary w-100" onclick="login()">Войти</button>
+            </div>
+
+            <div id="registerBlock" style="display:none">
+                <input id="fullName" class="form-control mb-2" placeholder="ФИО">
+                <input id="regEmail" class="form-control mb-2" placeholder="Email">
+                <input id="regPassword" type="password" class="form-control mb-2" placeholder="Пароль">
+                <input id="regPassword2" type="password" class="form-control mb-2" placeholder="Повтор пароля">
+
+                <button class="btn btn-success w-100" onclick="register()">Зарегистрироваться</button>
+            </div>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-outline-secondary btn-sm" onclick="stubshow()">Google</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="stubshow()">GitHub</button>
+            </div>
+
+            <div class="text-center mt-3">   
+                <button class="btn btn-outline-secondary btn-sm" onclick="frgoutpassword()">Забыл пароль</button>
+            </div>
+
+            <div id="msg" class="text-danger mt-3 text-center"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
