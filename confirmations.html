@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light border-bottom">
+    <div class="container">
+        <span class="navbar-brand">ИТ-Проф</span>
+        <div>
+            <label id="user_name"></label>
+            <a href="edit-profile.html" class="btn btn-sm btn-outline-primary ms-2">Редактировать</a>
+            <button class="btn btn-sm btn-outline-danger" onclick="logout()">Выход</button>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container py-4">
+
+    <h4 class="mb-3">Подтверждения</h4>
+
+    <div id="confirmationsList"></div>
+
+</div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/confirmations.js"></script>
+</body>
+</html>

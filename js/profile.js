@@ -1,6 +1,6 @@
 async function loadProfile() {
 
-    const r = await get("/users/me");
+    const r = await get("/users/" + localStorage.getItem("id") + "/me");
 
     if (!r.success) {
         location.href = "login.html";

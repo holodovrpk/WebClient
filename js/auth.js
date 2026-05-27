@@ -15,7 +15,7 @@ async function login() {
     });
 
     if (result.success) {
-        localStorage.setItem("token", btoa(result.message));
+        localStorage.setItem("id", result.data.userId);
         location.href = "profile.html";
     } else {
         msg.textContent = "Ошибка входа";
@@ -43,23 +43,9 @@ async function register() {
 }
 
 
-function stubshow() {
-    alert("Функционал в разработке");
-}
-
-
 async function frgoutpassword()
 {
-    email = prompt("Введите email для напоминания");
 
-    if (!(email.includes("@") && email.includes(".")))
-            msg.textContent = "Некорректный email";
-
-    const result = await post("/auth/password", {
-        email: email
-    });
-
-    if (result.success)
         msg.textContent = "Запрос на восстановление пароля отправлен";
 
 }

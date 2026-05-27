@@ -1,23 +1,8 @@
 const API = "https://localhost:7058";
 
-function token() {
-
-   t = localStorage.getItem("token")
-  if (t == null)
-        return "";
-
-   return atob(localStorage.getItem("token"));
-
-}
-
-
 
 async function get(url) {
-    const r = await fetch(API + url, {
-        headers: {
-            "Authorization": "Bearer " + token()
-        }
-    });
+    const r = await fetch(API + url);
 
     return await r.json();
 }
@@ -27,19 +12,6 @@ async function post(url, data) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + token()
-        },
-        body: JSON.stringify(data)
-    });
-    return await r.json();
-}
-
-async function put(url, data) {
-    const r = await fetch(API + url, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + token()
         },
         body: JSON.stringify(data)
     });
@@ -47,6 +19,7 @@ async function put(url, data) {
 }
 
 function logout() {
-    localStorage.removeItem("token");
+    localStorage.clear();
     location.href = "login.html";
+
 }
